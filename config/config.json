@@ -8,7 +8,7 @@
     },
 
     "production": {
-        "PORT": 1234,
+        "PORT": 3000,
         "MONGODB_URI": "mongodb://xxxxx/DB_Name",
         "JWT_SECRET": "SECRET#2410",
         "JWT_EXP": "2h"
