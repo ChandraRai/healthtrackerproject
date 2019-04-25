@@ -16,11 +16,10 @@
   "bugs": {
     "url": "https://github.com/vijisiyanthan/COMP308FinalProject/issues"
   },
-     "engines": {
-       "node" : "^10.15.0",
-       "npm" : "^6.0.0"
-      },
-
+  "engines": {
+    "node": "^10.15.0",
+    "npm": "^6.0.0"
+  },
   "homepage": "https://github.com/vijisiyanthan/COMP308FinalProject#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
