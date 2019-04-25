@@ -1,0 +1,79 @@
+<div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+  <div class="container">
+    <div class="row wow fadeIn">
+      <div class="col-md-9 mb-4 white-text text-center text-md-left">
+        <h2 class="display-4 font-weight-bold">Patient's Details</h2>
+        <hr class="hr-light">
+
+        <a class="btn btn-primary" routerLink="/patient-clinic-add/{{patientId}}" role="button">
+          <i class="fas fa-plus-circle"></i>Add record
+        </a>
+        <div class="row">
+          <div class="col-md-offsetr-3 col-md-12">
+            <table class="table table-bordered table-striped table-hover">
+              <tr>
+                <th class="text-center">Record Id</th>
+                <th class="text-center">Record Time</th>
+                <th class="text-center">Body Temperature</th>
+                <th class="text-center">Heart Rate</th>
+                <th class="text-center">Blood Pressure</th>
+                <th class="text-center">Respiratory Rate</th>
+                <th class="text-center">Assigned To</th>
+                <th class="text-center"></th>
+                <th class="text-center"></th>
+              </tr>
+              <tr *ngFor="let clinic of clinicDetails">
+                <td class="text-center">{{ clinic._id }}</td>
+                <td class="text-center">{{ clinic.recorded }}</td>
+
+                <div *ngIf="(clinic.hasOwnProperty('bodyTemperature'));then tempContent else other_content">
+                </div>
+                <ng-template #tempContent>
+                  <td class="text-center">
+                    {{ clinic.bodyTemperature }}
+                  </td>
+                </ng-template>
+
+                <div *ngIf="((clinic.hasOwnProperty('heartRate')));then heartContent else other_content">
+                </div>
+                <ng-template #heartContent>
+                  <td class="text-center">
+                    {{ clinic.heartRate }}
+                  </td>
+                </ng-template>
+
+                <div *ngIf="((clinic.hasOwnProperty('bloodPressure')));then bloodContent else other_content">
+                </div>
+                <ng-template #bloodContent>
+                  <td class="text-center">
+                    {{ clinic.bloodPressure }}
+                  </td>
+                </ng-template>
+
+                <div *ngIf="((clinic.hasOwnProperty('respiratoryRate')));then respContent else other_content">
+                </div>
+                <ng-template #respContent>
+                  <td class="text-center">
+                    {{ clinic.respiratoryRate }}
+                  </td>
+                </ng-template>
+                <ng-template #other_content>
+                  <td class="text-center">*NR</td>
+                </ng-template>
+
+                <td class="text-center">{{ clinic.nurse }}</td>
+                <td class="text-center">
+                  <a routerLink="/patient-clinic-update/{{ clinic._id }}" class="btn btn-info"><i class="fas fa-pencil-alt"></i> Edit</a>
+                </td>
+                <td class="text-center">
+                  <a (click)="onDelete(clinic._id)" class="btn btn-danger"><i class="fas fa-pencil-alt"></i> Delete</a>
+                </td>
+              </tr>
+            </table>
+            <p class="text-uppercase font-weight-bold">*NR: Not Recorded Test</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

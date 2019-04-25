@@ -1,0 +1,68 @@
+<div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+  <div class="container">
+    <div class="row wow fadeIn">
+      <div class="col-md-9 mb-4 white-text text-center text-md-left">
+        <h2 class="display-4 font-weight-bold">Patient's Daily Info</h2>
+        <hr class="hr-light">
+
+        <a class="btn btn-primary" routerLink="/patient-daily-update" role="button">
+          <i class="fas fa-plus-circle"></i>Add record
+        </a>
+        <div class="row">
+          <div class="col-md-offsetr-3 col-md-12">
+            <table class="table table-bordered table-striped table-hover">
+              <tr>
+                <th class="text-center">Record Id</th>
+                <th class="text-center">Record Time</th>
+                <th class="text-center">Body Temperature</th>
+                <th class="text-center">Weight</th>
+                <th class="text-center">Blood Sugar</th>
+                <th class="text-center"></th>
+                <th class="text-center"></th>
+              </tr>
+              <tr *ngFor="let info of infoDetails">
+                <td class="text-center">{{ info._id }}</td>
+                <td class="text-center">{{ info.recorded }}</td>
+
+                <div *ngIf="(info.hasOwnProperty('bodyTemperature'));then tempContent else other_content">
+                </div>
+                <ng-template #tempContent>
+                  <td class="text-center">
+                    {{ info.bodyTemperature }}
+                  </td>
+                </ng-template>
+
+                <div *ngIf="((info.hasOwnProperty('weight')));then heartContent else other_content">
+                </div>
+                <ng-template #heartContent>
+                  <td class="text-center">
+                    {{ info.weight }}
+                  </td>
+                </ng-template>
+
+                <div *ngIf="((info.hasOwnProperty('bloodSugar')));then bloodContent else other_content">
+                </div>
+                <ng-template #bloodContent>
+                  <td class="text-center">
+                    {{ info.bloodSugar }}
+                  </td>
+                </ng-template>
+                <ng-template #other_content>
+                  <td class="text-center">*NR</td>
+                </ng-template>
+
+                <td class="text-center">
+                  <a (click)="onEdit(info._id)" class="btn btn-info"><i class="fas fa-pencil-alt"></i> Edit</a>
+                </td>
+                <td class="text-center">
+                  <a (click)="onDelete(info._id)" class="btn btn-danger"><i class="fas fa-pencil-alt"></i> Delete</a>
+                </td>
+              </tr>
+            </table>
+            <p class="text-uppercase font-weight-bold">*NR: Not Recorded Test</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

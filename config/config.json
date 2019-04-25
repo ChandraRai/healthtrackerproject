@@ -1,0 +1,17 @@
+{
+    "development": {
+        "PORT": 3000,
+        "MONGODB_URI": "mongodb+srv://user:centennialcollege@comp308final-tgouu.gcp.mongodb.net/COMP308FinalProject",
+        "JWT_SECRET": "SECRET#2410",
+        "JWT_EXP": "2h"
+
+    },
+
+    "production": {
+        "PORT": 80,
+        "MONGODB_URI": "mongodb://xxxxx/DB_Name",
+        "JWT_SECRET": "SECRET#2410",
+        "JWT_EXP": "2h"
+    }
+
+}

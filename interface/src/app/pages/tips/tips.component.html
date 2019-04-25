@@ -1,0 +1,22 @@
+<div class="container-fluid text-dark">
+  <div class="row justify-content-center align-items-center">
+    <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+      <!-- Form container -->
+      <form #tipsForm="ngForm" (ngSubmit)="onSubmit(tipsForm)">
+        <h2 class="display-4 font-weight-bold">Patient Tips</h2>
+        <hr>
+        <br>
+        <div class="md-form">
+          <i class="fa fa-comment prefix grey-text"></i>
+          <label for="materialFormRegisterNameEx">Message</label>
+          <input type="String" id="materialFormRegisterNameEx" name="content" class="form-control" #content="ngModel"
+            [(ngModel)]="model.content">
+        </div>
+
+        <div class="text-center mt-4">
+          <input type="submit" class="login" value="Send">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

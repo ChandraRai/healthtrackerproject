@@ -1,0 +1,39 @@
+<div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+  <div class="container">
+    <div class="row wow fadeIn">
+      <div class="col-md-9 mb-4 white-text text-center text-md-left">
+        <h2 class="display-4 font-weight-bold">Welcome to {{ title }}</h2>
+        <hr class="hr-light">
+        <div class="row">
+          <div class="col-md-offsetr-3 col-md-12">
+            <table class="table table-bordered table-striped table-hover">
+              <tr>
+                <th class="text-center">Patient Id</th>
+                <th class="text-center">First Name</th>
+                <th class="text-center">Last Name</th>
+                <th class="text-center">Username</th>
+                <th class="text-center"></th>
+                <th class="text-center"></th>
+              </tr>
+              <tr *ngFor="let user of users">
+                <td class="text-center">{{ user._id }}</td>
+                <td class="text-center">{{ user.firstName }}</td>
+                <td class="text-center">{{ user.lastName }}</td>
+                <td class="text-center">{{ user.userName }}</td>
+                <td class="text-center">
+                  <a routerLink="/patient-details/{{user._id}}" class="btn btn-info"><i class="fas fa-pencil-alt"></i>
+                    View</a>
+                </td>
+                <td class="text-center">
+                  <a routerLink="/nurse/tips/{{user._id}}" class="btn btn-link"><i class="fas fa-comments"></i>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container-fluid text-dark">
+  <div class="row justify-content-center align-items-center">
+    <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+      <form method="POST" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <p class="h2 text-center mb-4">Welcome!</p>
+        <div class="md-form">
+          <i class="fa fa-user"> </i>
+          <label for="username"> Username</label>
+          <input type="text" id="username" name="userName" class="form-control" #userName="ngModel"
+            [(ngModel)]="model.userName">
+        </div>
+        <br>
+        <div class="md-form">
+          <i class="fa fa-lock"></i>
+          <label for="password"> Password</label>
+          <input type="password" id="password" name="password" class="form-control" #password="ngModel"
+            [(ngModel)]="model.password">
+          Or
+          <a routerLink="/signup">Register Here</a>
+        </div>
+        <div class="text-center mt-4">
+          <input type="submit" class="login" value="Login">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

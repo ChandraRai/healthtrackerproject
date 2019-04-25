@@ -1,0 +1,36 @@
+<div class="container-fluid text-dark">
+  <div class="row justify-content-center align-items-center">
+    <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+      <!-- Form container -->
+      <form #infoForm="ngForm" (ngSubmit)="onSubmit(infoForm)">
+        <h2 class="display-4 font-weight-bold">Your Daily Info</h2>
+        <hr>
+        <br>
+        <div class="md-form">
+          <i class="fa fa-thermometer-three-quarters prefix grey-text"></i>
+          <label for="materialFormRegisterNameEx">Body Temperature</label>
+          <input type="String" id="materialFormRegisterNameEx" name="bodyTemperature" class="form-control"
+            #bodyTemperature="ngModel" [(ngModel)]="model.bodyTemperature">
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-weight prefix grey-text"></i>
+          <label for="materialFormRegisterNameEx">Weight</label>
+          <input type="String" id="materialFormRegisterNameEx" name="weight" class="form-control" #weight="ngModel"
+            [(ngModel)]="model.weight">
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-tint prefix grey-text"></i>
+          <label for="materialFormRegisterNameEx">Blood Sugar Level</label>
+          <input type="String" id="materialFormRegisterNameEx" name="bloodSugar" class="form-control"
+            #bloodSugar="ngModel" [(ngModel)]="model.bloodSugar">
+        </div>
+
+        <div class="text-center mt-4">
+          <input type="submit" class="login" value="Send">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

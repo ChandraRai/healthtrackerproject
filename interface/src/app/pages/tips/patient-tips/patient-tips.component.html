@@ -1,0 +1,25 @@
+<div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+  <div class="container">
+    <div class="row wow fadeIn">
+      <div class="col-md-9 mb-4 white-text text-center text-md-left">
+        <h2 class="display-4 font-weight-bold">Your Daily Tips!</h2>
+        <hr class="hr-light">
+        <div class="row">
+          <div class="col-md-offsetr-3 col-md-12">
+            <table class="table table-bordered table-striped table-hover">
+              <tr>
+                <th class="text-center">Tips</th>
+                <th class="text-center">Message</th>
+              </tr>
+              <tr *ngFor="let tip of tips">
+                <td class="text-center">{{ tip.recorded }}</td>
+                <td class="text-center">{{ tip.content }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

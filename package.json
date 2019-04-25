@@ -1,0 +1,38 @@
+{
+  "name": "comp308finalproject",
+  "version": "1.0.0",
+  "description": "COMP308-Final Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "heroku-postbuild": "ng build --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijisiyanthan/COMP308FinalProject.git"
+  },
+  "author": "Siyanthan Vijithamparanathan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vijisiyanthan/COMP308FinalProject/issues"
+  },
+     "engines": {
+       "node" : "^10.15.0",
+       "npm" : "^6.0.0"
+      },
+
+  "homepage": "https://github.com/vijisiyanthan/COMP308FinalProject#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.5.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}

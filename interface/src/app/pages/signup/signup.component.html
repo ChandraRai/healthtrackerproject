@@ -1,0 +1,49 @@
+<div class="container-fluid text-dark">
+  <div class="row justify-content-center align-items-center">
+    <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+      <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
+        <p class="h2 text-center mb-4">{{ title }}</p>
+        <div class="md-form">
+
+          <label for="materialFormRegisterNameEx">First Name</label>
+          <input type="text" id="materialFormRegisterNameEx" #firstName="ngModel" [(ngModel)]="model.firstName"
+            class="form-control" name="firstName">
+        </div>
+        <div class="md-form">
+
+          <label for="materialFormRegisterEmailEx">Last Name</label>
+          <input type="text" id="materialFormRegisterEmailEx" #lastName="ngModel" [(ngModel)]="model.lastName"
+            class="form-control" name="lastName">
+
+        </div>
+        <div class="md-form">
+
+          <label for="materialFormRegisterConfirmEx">Username</label>
+          <input type="text" id="materialFormRegisterConfirmEx" #userName="ngModel" [(ngModel)]="model.username"
+            class="form-control" name="userName">
+        </div>
+        <div class="md-form">
+
+          <label for="materialFormRegisterConfirmEx">Password</label>
+          <input type="password" id="materialFormRegisterConfirmEx" class="form-control" #password="ngModel"
+            [(ngModel)]="model.password" name="password">
+        </div>
+        <div class="md-form">
+
+          <label for="materialFormRegisterPasswordEx">Email</label>
+          <input type="Email" id="materialFormRegisterPasswordEx" class="form-control" #email="ngModel"
+            [(ngModel)]="model.email" name="email">
+        </div>
+        <div class="md-form">
+
+          <label for="materialFormRegisterPasswordEx">Role</label>
+          <input type="text" id="materialFormRegisterPasswordEx" class="form-control" #role="ngModel"
+            [(ngModel)]="model.role" name="role">
+        </div>
+        <div class="text-center mt-4">
+          <input type="submit" class="login" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
