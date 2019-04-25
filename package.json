@@ -17,8 +17,8 @@
     "url": "https://github.com/vijisiyanthan/COMP308FinalProject/issues"
   },
   "engines": {
-    "node": "^10.15.0",
-    "npm": "^6.0.0"
+    "node": "11.8.0",
+    "npm": "6.9.0"
   },
   "homepage": "https://github.com/vijisiyanthan/COMP308FinalProject#readme",
   "dependencies": {
